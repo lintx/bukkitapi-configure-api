@@ -1,10 +1,12 @@
 package org.lintx.example.Configure.config;
 
-import org.lintx.plugins.modules.configure.Configure;
 
-@Configure.yamlFile(path = "language_en_us.yml")
-public class DefaultLanguage extends Configure {
+import org.lintx.plugins.modules.configure.BukkitConfigure;
+import org.lintx.plugins.modules.configure.ConfigureAnnotation;
 
-    @yamlConfig
+@ConfigureAnnotation.yamlFile(path = "language_en_us.yml")
+public class DefaultLanguage extends BukkitConfigure {
+
+    @ConfigureAnnotation.yamlConfig
     public String string1 = "";
 }

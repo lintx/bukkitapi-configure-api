@@ -1,48 +1,49 @@
 package org.lintx.example.Configure.config;
 
-import org.lintx.plugins.modules.configure.Configure;
+import org.lintx.plugins.modules.configure.BukkitConfigure;
+import org.lintx.plugins.modules.configure.ConfigureAnnotation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Configure.yamlFile
-public class Default extends Configure {
+@ConfigureAnnotation.yamlFile
+public class Default extends BukkitConfigure {
     enum exampleenum{
         A,B,C
     }
 
-    @yamlConfig
+    @ConfigureAnnotation.yamlConfig
     public String string1 = "default";
 
-    @yamlConfig(path = "string2")
+    @ConfigureAnnotation.yamlConfig(path = "string2")
     public String aliasstring = "";
 
-    @yamlConfig
+    @ConfigureAnnotation.yamlConfig
     public int int1 = 0;
 
-    @yamlConfig(path = "int2")
+    @ConfigureAnnotation.yamlConfig(path = "int2")
     public int aliasint = 0;
 
-    @yamlConfig
+    @ConfigureAnnotation.yamlConfig
     public double double1 = 0;
 
-    @yamlConfig
+    @ConfigureAnnotation.yamlConfig
     public exampleenum enum1 = exampleenum.C;
 
-    @yamlConfig
+    @ConfigureAnnotation.yamlConfig
     public List<String> liststr1 = new ArrayList<String>();
 
-    @yamlConfig
+    @ConfigureAnnotation.yamlConfig
     public List<Integer> listint1 = new ArrayList<Integer>();
 
-    @yamlConfig(path = "child1")
+    @ConfigureAnnotation.yamlConfig(path = "child1")
     public Child child = new Child();
 
-    @yamlConfig
+    @ConfigureAnnotation.yamlConfig
     public Child child2 = new Child();
 
-    @yamlConfig(path = "map1")
+    @ConfigureAnnotation.yamlConfig(path = "map1")
     public Map<String,String> map = new HashMap<String, String>();
 }
