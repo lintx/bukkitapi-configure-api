@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.lintx.example.Configure.config.Default;
 import org.lintx.example.Configure.config.DefaultLanguage;
 import org.lintx.example.Configure.config.Language;
+import org.lintx.example.Configure.config.NoYmlToSaveFile;
 
 import java.util.Map;
 
@@ -56,6 +57,10 @@ public class Example extends JavaPlugin {
         DefaultLanguage not_file = new DefaultLanguage();
         not_file.load(this,"not_file.yml");
         log("not_file.string1",not_file.string1);
+
+        NoYmlToSaveFile nofile = new NoYmlToSaveFile();
+        nofile.load(this);
+        nofile.save();
     }
 
     private void log(String name,String val){
