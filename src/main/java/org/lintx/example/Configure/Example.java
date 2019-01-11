@@ -2,6 +2,8 @@ package org.lintx.example.Configure;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import org.lintx.example.Configure.config.Default;
+import org.lintx.example.Configure.config.DefaultLanguage;
+import org.lintx.example.Configure.config.Language;
 
 import java.util.Map;
 
@@ -42,6 +44,18 @@ public class Example extends JavaPlugin {
         log("new,int1",""+config.int1);
         log("new,child2.grandson.double1",""+config.child2.grandson.double1);
         config.save();
+
+        Language zh_cn = new Language();
+        zh_cn.load(this,"language_zh_cn.yml");
+        log("zh_cn.string1",zh_cn.string1);
+
+        Language en_us = new Language();
+        en_us.load(this,"language_en_us.yml");
+        log("en_us.string1",en_us.string1);
+
+        DefaultLanguage not_file = new DefaultLanguage();
+        not_file.load(this,"not_file.yml");
+        log("not_file.string1",not_file.string1);
     }
 
     private void log(String name,String val){
