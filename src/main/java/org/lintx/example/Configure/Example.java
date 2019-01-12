@@ -1,10 +1,8 @@
 package org.lintx.example.Configure;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import org.lintx.example.Configure.config.Default;
-import org.lintx.example.Configure.config.DefaultLanguage;
-import org.lintx.example.Configure.config.Language;
-import org.lintx.example.Configure.config.NoYmlToSaveFile;
+import org.lintx.example.Configure.config.*;
+import org.lintx.plugins.modules.configure.Configure;
 
 import java.util.Map;
 
@@ -61,6 +59,12 @@ public class Example extends JavaPlugin {
         NoYmlToSaveFile nofile = new NoYmlToSaveFile();
         nofile.load(this);
         nofile.save();
+
+        NoInherit n = new NoInherit();
+        Configure.bukkitLoad(this,n);
+        log("NoInherit.example",n.example);
+        Configure.bukkitSave(this,n);
+        //这里有问题，没有保存，上面的save也没有保存
     }
 
     private void log(String name,String val){

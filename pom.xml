@@ -34,7 +34,7 @@
         <dependency>
             <groupId>org.lintx.plugins.modules</groupId>
             <artifactId>Configure</artifactId>
-            <version>1.0</version>
+            <version>1.2.0-SNAPSHOT</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/ConfigureCore.jar</systemPath>
         </dependency>

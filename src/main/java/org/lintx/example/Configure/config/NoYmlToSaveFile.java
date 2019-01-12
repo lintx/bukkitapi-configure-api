@@ -1,11 +1,11 @@
 package org.lintx.example.Configure.config;
 
 import org.lintx.plugins.modules.configure.BukkitConfigure;
-import org.lintx.plugins.modules.configure.ConfigureAnnotation;
+import org.lintx.plugins.modules.configure.YamlConfig;
 
-@ConfigureAnnotation.yamlFile(path = "config/noyml.yml")
+@YamlConfig(path = "config/noyml.yml")
 public class NoYmlToSaveFile extends BukkitConfigure {
 
-    @ConfigureAnnotation.yamlConfig
+    @YamlConfig
     public String string = "test string";
 }

@@ -2,14 +2,14 @@ package org.lintx.example.Configure.config;
 
 
 import org.lintx.plugins.modules.configure.BukkitConfigure;
-import org.lintx.plugins.modules.configure.ConfigureAnnotation;
+import org.lintx.plugins.modules.configure.YamlConfig;
 
-@ConfigureAnnotation.yamlFile(path = "example.yml")
+@YamlConfig(path = "example.yml")
 public class Example extends BukkitConfigure {
 
-    @ConfigureAnnotation.yamlConfig
+    @YamlConfig
     public String string1 = "";
 
-    @ConfigureAnnotation.yamlConfig(path = "child.string1")
+    @YamlConfig(path = "child.string1")
     public String string2 = "";
 }
